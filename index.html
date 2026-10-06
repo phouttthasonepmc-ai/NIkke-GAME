@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="lo">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NIKKE: RAPTURE ESCAPE</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="game-header">
+        <h1>RAPTURE ENCOUNTER</h1>
+        <p>MISSION: ເກັບ Core Crystals ແລະ ຫຼົບໜີຈາກ Rapture!</p>
+        <div class="score-board">
+            <span>Crystals: <strong id="score">0</strong> / <span id="total-dots">0</span></span>
+            <span class="speed-indicator">Rapture Threat: <strong id="ghost-speed-text">NORMAL</strong></span>
+        </div>
+    </div>
+
+    <!-- ກອບສະແດງຜົນເກມ -->
+    <div id="game-container">
+        <div id="maze"></div>
+
+        <div id="player">
+            <img src="https://sg-cdn.blablalink.com/cms/nrft/feeds/pic/_5d1f10b24fda135561ec8decbeaaffd1c62c6cc0.gif?imgtype=emoji" alt="Player">
+        </div>
+
+        <div id="ghost">
+            <img src="https://img1.picmix.com/output/stamp/normal/1/5/3/6/2816351_170d6.gif" alt="Ghost">
+        </div>
+    </div>
+
+    <!-- ປຸ່ມຄວບຄຸມ -->
+    <div class="controls">
+        <button id="btn-up">⬆️</button>
+        <div class="middle-row">
+            <button id="btn-left">⬅️</button>
+            <button id="btn-down">⬇️</button>
+            <button id="btn-right">➡️</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

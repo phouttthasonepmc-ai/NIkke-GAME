@@ -1,0 +1,148 @@
+/* ຕັ້ງຄ່າພື້ນຖານ */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'noto sans lao', sans-serif;
+}
+
+body {
+    background-color: #08080d; /* ສີພື້ນຫຼັງມຶດສໄຕລ໌ Post-Apocalyptic */
+    color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.game-header {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.game-header h1 {
+    color: #ff3333; /* ສີແດງ Rapture Alert */
+    text-shadow: 0 0 10px rgba(255, 51, 51, 0.7);
+    letter-spacing: 3px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.game-header p {
+    color: #8a99ad;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+/* ແຜງສະແດງຄະແນນສໄຕລ໌ Sci-Fi HUD */
+.score-board {
+    display: flex;
+    justify-content: space-around;
+    background-color: #10141d;
+    border: 2px solid #ff3333;
+    padding: 8px 15px;
+    border-radius: 4px;
+    font-size: 16px;
+    gap: 20px;
+    box-shadow: inset 0 0 10px rgba(255, 51, 51, 0.2);
+}
+
+.score-board strong {
+    color: #00e5ff;
+}
+
+/* ກອບເກມ Sci-Fi Sector */
+#game-container {
+    width: 600px;
+    height: 600px;
+    background-color: #0d1117;
+    border: 4px solid #ff3333;
+    box-shadow: 0 0 25px rgba(255, 51, 51, 0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+#maze {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(15, 1fr);
+    grid-template-rows: repeat(15, 1fr);
+}
+
+/* ກຳແພງຊາກອາຄານร้าง / ເຫຼັກ (Wall) */
+.wall {
+    background-color: #1f2937;
+    border: 1px solid #374151;
+    box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.8);
+}
+
+/* ທາ່ງເດີນ (Path) */
+.path {
+    background-color: #0a0d14;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ເມັດ Core / Core Crystal (ແທນເມັດດາວ) */
+.dot {
+    width: 8px;
+    height: 8px;
+    background-color: #00e5ff;
+    border-radius: 2px; /* ເປັນສີ່ຫຼ່ຽມ Crystal */
+    box-shadow: 0 0 10px #00e5ff;
+}
+
+/* ຕົວລະຄອນ Player ແລະ Rapture */
+#player, #ghost {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    transition: left 0.1s linear, top 0.1s linear;
+    z-index: 10;
+}
+
+#player img, #ghost img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    image-rendering: pixelated;
+}
+
+/* ປຸ່ມຄວບຄຸມ UI */
+.controls {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.middle-row {
+    display: flex;
+    gap: 5px;
+}
+
+.controls button {
+    width: 50px;
+    height: 50px;
+    background-color: #10141d;
+    border: 2px solid #00e5ff;
+    color: #00e5ff;
+    font-size: 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.controls button:active {
+    background-color: #00e5ff;
+    color: #000;
+}
